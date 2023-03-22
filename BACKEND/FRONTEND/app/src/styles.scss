@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+// $primary: #900;
+// $enable-shadows: true;
+// $prefix: "mo-";
+
+:root{     
+    --background:#303030;     
+    --white:rgb(255,255,255);
+    --grey:#444141;   
+    --yellow:rgb(247,152,9);   
+}
+body{
+
+    font-family: 'Poppins', sans-serif;
+}
+.ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #f59706 !important;
+    color: #fefefe;
+    cursor: default;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+

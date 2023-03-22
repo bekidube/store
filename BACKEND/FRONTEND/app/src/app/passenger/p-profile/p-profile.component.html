@@ -1,0 +1,141 @@
+<body style="background: #303030;">
+    <nav class="navbar navbar-light navbar-expand fixed-top py-3" style="background: #ffffff;">
+        <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav flex-shrink-0 flex-fill justify-content-between" style="height: 43px;">
+                    <li class="nav-item"><a class="nav-link active float-start" routerLink="/p-dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-chevron-left" style="color: rgb(47,47,47);font-size: 30px;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <polyline points="15 6 9 12 15 18"></polyline>
+                            </svg></a></li>
+                    <li class="nav-item"><a class="nav-link active float-start" href="#" style="margin-right: 48px;">
+                            <p>Profile</p>
+                        </a></li>
+                    <li class="nav-item"></li>
+                </ul>
+              
+            </div>
+        </div>
+    </nav>
+    
+
+
+   <!-------bottom menu-->
+   <app-bottom-menu></app-bottom-menu>
+   <!-------------------->
+
+
+
+
+    <div class="container" style="padding-top: 84px;padding-bottom: 11px;margin-top: 34px;position: static;">
+        <div class="row p-2">
+            <div class="col">
+                <div class="card shadow-lg" style="border-radius: 15px;border-style: none;border-left-style: none;">
+                    <div class="card-body" style="border-radius: 15px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;opacity: 1;">
+                        <p style="color: rgb(255,255,255);margin-top: 11px;font-size: 13px;"></p>
+                        <div class="row">
+                            <div class="col-2"><span class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon" style="border-radius: 23px;background: rgb(247,152,9);font-size: 28px;"><span style="font-weight: bold;">{{init}}</span></span></div>
+                            <div class="col-7" style="text-align: left;">
+                                <p style="color: rgb(247,152,9);margin-top: 3px;"><strong>{{user.fullname}}</strong></p>
+                                <p style="color: rgb(247,152,9);font-size: 11px;margin-top: -18px;"><strong><span style="color: rgb(255, 255, 255);">{{user.email}}</span></strong><br></p>
+                            </div>
+                            <div class="col-3">
+
+                               
+
+                                <button  class="btn shadow-lg float-end" type="button" style="background: #f79809;" data-bs-target="#myModal" data-bs-toggle="modal">
+                                    <i class="fas fa-pen text-white"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col">
+                <div class="card " style="border-radius: 15px;border-style: none;border-left-style: none;">
+                    <div class="card-body" style="border-radius: 15px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;opacity: 1;">
+                        <p style="color: rgb(255,255,255);margin-top: 10px;font-size: 11px;">&nbsp; &nbsp;My balance</p>
+                        <p style="color: rgb(255,255,255);margin-top: -16px;font-size: 12px;"><i class="fas fa-wallet" style="color: rgb(246,152,4);"></i>&nbsp; &nbsp;{{user.amount|number:'1.2-2'}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card " style="border-radius: 15px;border-style: none;border-left-style: none;">
+                    <div class="card-body" style="border-radius: 15px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;opacity: 1;">
+                        <p style="color: rgb(255,255,255);margin-top: 10px;font-size: 11px;">&nbsp; &nbsp;Points Used</p>
+                        <p style="color: rgb(255,255,255);margin-top: -16px;font-size: 12px;"><i class="fas fa-wallet" style="color: rgb(246,152,4);"></i>&nbsp; &nbsp;{{positives|number:'1.2-2'}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col">
+                <div class="card" style="border-radius: 15px;border-style: none;border-left-style: none;">
+                  
+
+                    <a class="cpass" routerLink="/changepassword" data-bs-toggle="modal" style="text-decoration:none;">
+
+                        <div class="card-body" style="border-radius: 15px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;opacity: 1;">
+                            <p style="color: rgb(255,255,255);margin-top: 0px;font-size: 13px;margin-top: 10px;"><i class="fas fa-user-lock" style="color: rgb(246,152,4);"></i>&nbsp; &nbsp;Password</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+       <!--profile update form-->
+       <div>
+        <div class="modal fade shadow-none" role="dialog" tabindex="-1" id="myModal" style="margin-top: 150px;border-style: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body shadow-none" style="background: #444141;border-radius: 10px;border-style: none;">
+                        <div class="float-end"><a href="#" data-bs-dismiss="modal"><i class="far fa-times-circle" style="font-size: 17px;color: #f79809;"></i></a></div><label class="form-label" style="margin-top: 7px;color: #f79809;">Fullname</label>
+                        <form [formGroup]="form" #userPost="ngForm" class="text-center" method="post" >
+                        <input type="text" class="form-control" style="height: 42px;" formControlName="fullname" [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }" name="fullname" >
+
+                           <!-----------vali-->    
+                           <div style="text-align: left;" *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+                            <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
+                            <div *ngIf="f['fullname'].errors['minlength']">Fullname must be atleast 3 characters</div>
+                            <div *ngIf="f['fullname'].errors['pattern']">field should contain alaphabetical characters only.</div>
+                        </div>
+                         
+                        <!-----------vali-->   
+
+                
+                        <div style="margin-top: 16px;"><button class="btn shadow" (click)="update(userPost.value)" data-bs-dismiss="modal" type="button" style="background: #303030;color: #f79809;">Save</button></div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--password change form-->
+
+
+    <div>
+        <div class="modal fade shadow-none" role="dialog" tabindex="-2" id="myModal1" style="margin-top: 150px;border-style: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body shadow-none" style="background: #444141;border-radius: 10px;border-style: none;">
+                        <div class="float-end"><a href="#" data-bs-dismiss="modal"><i class="far fa-times-circle" style="font-size: 17px;color: #f79809;"></i></a></div>
+                        
+        
+                        <form [formGroup]="form1" #passwordform="ngForm" class="text-center"  method="post" >
+                            <label class="form-label float-start" style="margin-top: 7px;color: #f79809;" name="password" >New password</label>
+                            <input type="password" class="form-control" style="height: 45px;"  formControlName="password" >
+                            <label class="form-label float-start" style="margin-top: 7px;color: #f79809;"   name="confirmPassword" >Confirm password</label>
+                            <input type="password" class="form-control" style="height: 45px;" formControlName="confirmPassword">
+                        <div style="margin-top: 16px;"><button class="btn shadow" data-bs-dismiss="modal" type="button"  style="background: #303030;color: #f79809;">Save</button></div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------->
+
+</body>
